@@ -41,6 +41,11 @@ public class MeterReadingController {
                 && electricityReadings != null && !electricityReadings.isEmpty();
     }
 
+    /**
+     * 
+     * @param smartMeterId
+     * @return
+     */
     @GetMapping("/read/{smartMeterId}")
     public ResponseEntity readReadings(@PathVariable String smartMeterId) {
         Optional<List<ElectricityReading>> readings = meterReadingService.getReadings(smartMeterId);
